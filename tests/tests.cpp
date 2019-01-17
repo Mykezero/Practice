@@ -1,16 +1,12 @@
 #include <CppUTest/TestHarness.h>
+#include "../src/sample.h"
 
-extern "C"
-{
-   // Include your test files here.
-   //#include "sample.h"
-}
-
-TEST_GROUP(FirstTestGroup)
+TEST_GROUP(Sample)
 {
 };
 
-TEST(FirstTestGroup, FirstTest)
+TEST(Sample, FirstTest)
 {
-   FAIL("Fail me!");
+    int result = test();
+    CHECK_EQUAL(1, result);
 }

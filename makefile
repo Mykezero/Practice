@@ -13,20 +13,18 @@ bin = ./bin
 
 # For compiling the C application code.
 CC			= gcc
-CFLAGS 		= --coverage
+FLAGS_C 	= --coverage
 LDFLAGS 	= --coverage -L$(CPPUTEST_HOME)/lib -lCppUTest
 
 # For compiling cpputest with C++
 CPP 		= g++
-CPPFLAGS  	= -g -Wall -I$(CPPUTEST_HOME)/include
+FLAGS_CPP  	= -I$(CPPUTEST_HOME)/include -D TEST
 
 all: clean main test run cover
-main: $(src_obj)
-	echo $(src_obj)
-	$(CC) $(CFLAGS) -o $(bin)/$@ $^ $(LDFLAGS)
-test: $(test_obj)
-	echo $(test_obj)
-	$(CPP) $(CPPFLAGS) -o $(bin)/$@ $^ $(LDFLAGS)
+main:
+	$(CC) $(FLAGS_C) src/*.c $(LDFLAGS) -o $(bin)/$@
+test:
+	$(CPP) $(FLAGS_CPP) src/*.c tests/*.cpp $(LDFLAGS) -o $(bin)/$@
 clean:
 	rm -f $(obj) $(bin)/test $(bin)/main
 run: 
