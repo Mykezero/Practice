@@ -1,5 +1,6 @@
 #include <CppUTest/TestHarness.h>
 #include "sample.h"
+#include <string>
 
 TEST_GROUP(Sample)
 {
