@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-int main()
+#ifndef CPPUTEST
+int main(int argc, char *argv[])
 {
-    printf("hello world!");
+    printf("hello world!\n");
 }
+#endif
