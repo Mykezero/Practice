@@ -18,7 +18,7 @@ LDFLAGS 	= --coverage -L$(CPPUTEST_HOME)/lib -lCppUTest
 
 # For compiling cpputest with C++
 CPP 		= g++
-FLAGS_CPP  	= -I$(CPPUTEST_HOME)/include -D TEST
+FLAGS_CPP  	= -I$(CPPUTEST_HOME)/include -D TEST -Isrc/
 
 all: clean main test run cover
 main:
