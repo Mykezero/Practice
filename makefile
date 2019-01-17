@@ -30,5 +30,5 @@ clean:
 run: 
 	$(bin)/test
 cover:
-	# lcov --capture --directory . --output-file out/coverage.info
-	# genhtml out/coverage.info --output-directory out
+	lcov --capture --directory . --output-file out/coverage.info
+	genhtml out/coverage.info --output-directory out
