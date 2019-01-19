@@ -20,13 +20,11 @@ LDFLAGS 	= --coverage -L$(CPPUTEST_HOME)/lib -lCppUTest
 CPP 		= g++
 FLAGS_CPP  	= -I$(CPPUTEST_HOME)/include -D TEST -Isrc/
 
-all: clean main test run cover
-main:
-	$(CC) $(FLAGS_C) src/*.c $(LDFLAGS) -o $(bin)/$@
+all: clean test run cover
 test:
 	$(CPP) $(FLAGS_CPP) src/*.c tests/*.cpp $(LDFLAGS) -o $(bin)/$@
 clean:
-	rm -f $(obj) $(bin)/test $(bin)/main
+	rm -f $(obj) $(bin)/test $(bin)/main $(wildcard *.gcda) $(wildcard *.gcno)
 run: 
 	$(bin)/test
 cover:
