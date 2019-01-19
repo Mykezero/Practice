@@ -1,32 +1,24 @@
 CPPUTEST_HOME = /tools/cpputest-3.8
 
-# Store C source and objects
-src = $(wildcard src/*.c)
-src_obj = $(src:.c=.o)
+bin 		= ./bin
+dirs 		= bin out
+files 		= .gcda .gcno .o
 
-# Store CPP source and objects
-test = $(wildcard tests/*.cpp)
-test_obj = $(test:.cpp=.o)
-
-obj = $(src_obj) $(test_obj)
-bin = ./bin
-
-# For compiling the C application code.
-CC			= gcc
-FLAGS_C 	= --coverage
+CPP 		= g++ --coverage
+CFLAGS  	= -I$(CPPUTEST_HOME)/include -Isrc/
 LDFLAGS 	= --coverage -L$(CPPUTEST_HOME)/lib -lCppUTest
 
-# For compiling cpputest with C++
-CPP 		= g++
-FLAGS_CPP  	= -I$(CPPUTEST_HOME)/include -D TEST -Isrc/
-
-all: clean test run cover
-test:
-	$(CPP) $(FLAGS_CPP) src/*.c tests/*.cpp $(LDFLAGS) -o $(bin)/$@
+all: clean main
+main:
+	$(CPP) $(CFLAGS) src/*.c $(LDFLAGS) -o $(bin)/$@
+	$(bin)/main
 clean:
-	rm -f $(obj) $(bin)/test $(bin)/main $(wildcard *.gcda) $(wildcard *.gcno)
-run: 
+	$(foreach dir, $(dirs), rm -rf $(dir)/*;)
+	$(foreach file, $(files), find . -type f -regex '.*\$(file)' -delete;)
+test:
+	$(CPP) $(CFLAGS) -D TEST src/*.c tests/*.cpp $(LDFLAGS) -o $(bin)/$@
 	$(bin)/test
-cover:
+report:  
 	lcov --capture --directory . --output-file out/coverage.info
 	genhtml out/coverage.info --output-directory out
+	xdg-open out/index.html
