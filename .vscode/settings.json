@@ -1,6 +1,13 @@
 {
-    "files.associations": {
-        "commandlinetestrunner.h": "c"
+    "lcov.path": "out/coverage.info",
+    "lcov.watch": [{
+        "pattern": "**/*.c",
+        "command": "make test && make cover"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    {
+        "pattern": "**/*.cpp",
+        "command": "make test && make cover"
+    }
+],
+"C_Cpp.errorSquiggles": "Disabled"
 }
