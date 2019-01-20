@@ -1,15 +1,19 @@
-# VSCode for C Example
+# Readme
+Installation Notes
 
-With VSCode LCov installed, the unit tests should run automatically when any C or CPP files change. 
+#### Packages
+sudo apt-get install build-essential
+sudo apt-get install git
 
-Currently using VSCode LCov version 1.10, since 2.0 does not seem to work on Linux Mint 19.1 Tessa
+#### Extensions
+Install VSCode LCov 1.10 since 2.0 does not work with  Linux Mint 19.1 Tessa. 
 
-## VSCode LCov Commands
+#### VSCode LCov Commands
 CTRL-T - Show Coverage Report
 CTRL-T - Enable Watchers
 
-## Running tests
+#### Running tests
 make tests && make cover && make report
 
-## Running main
+#### Running main
 make main
