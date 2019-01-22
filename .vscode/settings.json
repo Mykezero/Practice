@@ -1,20 +1,13 @@
 {
-    "lcov.path": "out/coverage.info",
-    "lcov.watch": [{
-        "pattern": "**/*.c",
-        "command": "make test && make cover"
-    },
-    {
-        "pattern": "**/*.cpp",
-        "command": "make test && make cover"
-    },
-    {
-        "pattern": "**/makefile",
-        "command": "make test && make cover"
-    }
-],
-"C_Cpp.errorSquiggles": "Disabled",
-"files.associations": {
-    "termbox.h": "c"
-}
+    "C_Cpp.errorSquiggles": "Disabled",
+    "saveAndRun": {
+        "commands": [
+          {
+            "match": ".*",
+            "cmd": "make clean && make test && make cover",
+            "useShortcut": false,
+            "silent": false
+          }
+        ]
+      }
 }

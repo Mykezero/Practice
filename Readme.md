@@ -10,14 +10,11 @@ cpputest    - https://github.com/cpputest/cpputest
 termbox     - https://github.com/nsf/termbox
 
 #### Extensions
-Install VSCode LCov 1.10 since 2.0 does not work with  Linux Mint 19.1 Tessa. 
+* Save And Run
+* Coverage Gutters
 
-#### VSCode LCov Commands
-CTRL-T - Show Coverage Report
-CTRL-T - Enable Watchers
-
-#### Running tests
+#### Running Tests
 make tests && make cover && make report
 
-#### Running main
+#### Running Main
 make main
