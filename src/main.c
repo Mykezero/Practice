@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include "termbox.h"
 
-#ifndef TEST
+#ifndef CPPUTEST
 
 int main(int argc, char *argv[])
 {

@@ -1,7 +1,5 @@
-#include <CppUTest/CommandLineTestRunner.h>
-
-int main(int argc, char *argv[])
+#include "CppUTest/CommandLineTestRunner.h"
+int main(int ac, char** av)
 {
-    CommandLineTestRunner::RunAllTests(argc, argv);
-    return 0;
+   return CommandLineTestRunner::RunAllTests(ac, av);
 }

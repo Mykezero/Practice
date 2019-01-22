@@ -5,6 +5,10 @@ Installation Notes
 sudo apt-get install build-essential
 sudo apt-get install git
 
+#### Libraries
+cpputest    - https://github.com/cpputest/cpputest
+termbox     - https://github.com/nsf/termbox
+
 #### Extensions
 Install VSCode LCov 1.10 since 2.0 does not work with  Linux Mint 19.1 Tessa. 
 

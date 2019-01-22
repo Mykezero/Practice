@@ -7,7 +7,14 @@
     {
         "pattern": "**/*.cpp",
         "command": "make test && make cover"
+    },
+    {
+        "pattern": "**/makefile",
+        "command": "make test && make cover"
     }
 ],
-"C_Cpp.errorSquiggles": "Disabled"
+"C_Cpp.errorSquiggles": "Disabled",
+"files.associations": {
+    "termbox.h": "c"
+}
 }
