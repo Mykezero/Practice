@@ -2,7 +2,7 @@
 
 extern "C"
 {
-    #include "sample.h"
+    #include "Sample.h"
 }
 
 TEST_GROUP(Sample)
