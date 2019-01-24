@@ -9,5 +9,8 @@
             "silent": false
           }
         ]
-      }
+    },
+    "files.associations": {
+        "samplespy.h": "c"
+    }
 }

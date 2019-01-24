@@ -1,6 +1,6 @@
 #include "sample.h"
 
-int test()
+int test(void)
 {
     int a = 1;
     int b = 2;
