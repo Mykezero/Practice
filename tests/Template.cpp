@@ -11,5 +11,5 @@ TEST_GROUP(Template)
 
 TEST(Template, FirstTest)
 {
-    CHECK_TRUE_TEXT(false, "This test is incomplete.");
+    CHECK_TRUE_TEXT(true, "This test is incomplete.");
 }
