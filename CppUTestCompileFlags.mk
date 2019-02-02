@@ -17,3 +17,5 @@ CPPUTEST_CFLAGS += -Wall
 CPPUTEST_CFLAGS += -Wstrict-prototypes
 CPPUTEST_CFLAGS += -pedantic
 CPPUTEST_CFLAGS += -Wno-missing-prototypes
+CPPUTEST_CFLAGS += -fmax-errors=1
+CPPUTEST_CFLAGS += -Wfatal-errors

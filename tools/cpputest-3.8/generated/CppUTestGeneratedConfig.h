@@ -25,7 +25,7 @@
 #define CPPUTEST_HAVE_INTTYPES_H 1
 #endif
 
-/* Define to 1 if the system has the type `long long int'. */
+/* Define to 1 if the system has the type 'long long int'. */
 #ifndef CPPUTEST_HAVE_LONG_LONG_INT
 #define CPPUTEST_HAVE_LONG_LONG_INT 1
 #endif
@@ -93,7 +93,7 @@
 #define CPPUTEST_HAVE_UNISTD_H 1
 #endif
 
-/* Define to 1 if the system has the type `unsigned long long int'. */
+/* Define to 1 if the system has the type 'unsigned long long int'. */
 #ifndef CPPUTEST_HAVE_UNSIGNED_LONG_LONG_INT
 #define CPPUTEST_HAVE_UNSIGNED_LONG_LONG_INT 1
 #endif

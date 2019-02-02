@@ -1,7 +1,7 @@
 #include "fizzbuzz.h"
-#include <stdio.h>
+#include "Console.h"
 
 void Run(void)
 {
-	printf("1");
+	Write("1");
 }

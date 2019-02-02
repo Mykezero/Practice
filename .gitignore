@@ -60,3 +60,4 @@ dkms.conf
 /objs/*
 test_tests
 test_tests.txt
+*.info
