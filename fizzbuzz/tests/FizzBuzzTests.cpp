@@ -14,3 +14,9 @@ TEST(FizzBuzz, PrintsNumber)
 	char* message = GetLastMessage();
 	STRCMP_EQUAL_TEXT("1", message, "Fizz buzz should print numbers");
 };
+
+
+TEST(FizzBuzz, TEST)
+{
+	FAIL("This test is incomplete.")
+};

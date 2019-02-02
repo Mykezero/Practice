@@ -1,16 +1,9 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled",
-    "saveAndRun": {
-        "commands": [
-          {
-            "match": ".*",
-            "cmd": "make clean && make test && make cover",
-            "useShortcut": false,
-            "silent": false
-          }
-        ]
-    },
     "files.associations": {
         "samplespy.h": "c"
-    }
+    },
+    "coverage-gutters.ignoredPathGlobs": "**/{tests}/**",
+    "coverage-gutters.lcovname": "coverage.info",
+    "coverage-gutters.showLineCoverage": true,
+    "coverage-gutters.showRulerCoverage": true
 }

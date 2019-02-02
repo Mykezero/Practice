@@ -5,7 +5,7 @@
 
 void Main(void)
 {
-	
+	Run();
 }
 
 #endif

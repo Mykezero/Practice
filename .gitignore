@@ -54,10 +54,10 @@ dkms.conf
 # lcov
 *.gcda
 *.gcno
+*.info
 
 # Add Application Specific Here
-/bin/*
-/objs/*
+**/bin/*
+**/objs/*
 test_tests
 test_tests.txt
-*.info

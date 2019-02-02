@@ -1,0 +1,13 @@
+{
+	"fact": {
+		"scope": "cpp",
+		"prefix": "fact",
+		"body": [
+			"TEST($1, $2)",
+			"{",
+			"\tFAIL(\"This test is incomplete.\")",
+			"};"
+		],
+		"description": "Create new cpputest case"
+	}
+}
