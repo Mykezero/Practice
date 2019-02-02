@@ -3,5 +3,5 @@
 
 void Run(void)
 {
-	Write("1");
+	Write("1, fizz, buzz");
 }

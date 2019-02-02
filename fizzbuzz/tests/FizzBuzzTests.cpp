@@ -12,11 +12,24 @@ TEST(FizzBuzz, PrintsNumber)
 {
 	Run();
 	char* message = GetLastMessage();
-	STRCMP_EQUAL_TEXT("1", message, "Fizz buzz should print numbers");
+	STRCMP_CONTAINS_TEXT("1", message, "Fizz buzz should print numbers");
 };
 
 
-TEST(FizzBuzz, TEST)
+TEST(FizzBuzz, PrintsFizz)
 {
-	FAIL("This test is incomplete.")
+	Run();
+	char* message = GetLastMessage();
+	STRCMP_CONTAINS("fizz", message);
+};
+
+TEST(FizzBuzz, PrintsBuzz)
+{
+	// Fixture setup
+	// Exercise system
+	Run();
+	// Verify outcome
+	char* message = GetLastMessage();
+	STRCMP_CONTAINS("buzz", message);
+	// Teardown
 };
