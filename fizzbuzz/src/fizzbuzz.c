@@ -1,7 +1,12 @@
 #include "fizzbuzz.h"
 #include "Console.h"
 
-void Run(void)
+char* results[100];
+
+char** Run(void)
 {
-	Write("1, fizz, buzz");
+	results[0] = "1";
+	results[2] = "fizz";
+	results[4] = "buzz";
+	return results;
 }

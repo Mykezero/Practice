@@ -10,26 +10,15 @@ TEST_GROUP(FizzBuzz) { };
 
 TEST(FizzBuzz, PrintsNumber)
 {
-	Run();
-	char* message = GetLastMessage();
-	STRCMP_CONTAINS_TEXT("1", message, "Fizz buzz should print numbers");
+	STRCMP_CONTAINS_TEXT("1", Run()[0], "Prints Numbers");
 };
-
 
 TEST(FizzBuzz, PrintsFizz)
 {
-	Run();
-	char* message = GetLastMessage();
-	STRCMP_CONTAINS("fizz", message);
+	STRCMP_CONTAINS_TEXT("fizz", Run()[2], "Prints Fizz");
 };
 
 TEST(FizzBuzz, PrintsBuzz)
 {
-	// Fixture setup
-	// Exercise system
-	Run();
-	// Verify outcome
-	char* message = GetLastMessage();
-	STRCMP_CONTAINS("buzz", message);
-	// Teardown
+	STRCMP_CONTAINS_TEXT("buzz", Run()[4], "Prints Buzz");
 };
