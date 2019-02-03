@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "samplespy.h": "c"
+        "samplespy.h": "c",
+        "fizzbuzz.h": "c"
     },
     "coverage-gutters.ignoredPathGlobs": "**/{tests}/**",
     "coverage-gutters.lcovname": "coverage.info",
