@@ -4,7 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/fizzbuzz/mocks"
+                "${workspaceFolder}/fizzbuzz/mocks",
+                "${workspaceFolder}/fractions/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

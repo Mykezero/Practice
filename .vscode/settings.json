@@ -6,5 +6,6 @@
     "coverage-gutters.ignoredPathGlobs": "**/{tests}/**",
     "coverage-gutters.lcovname": "coverage.info",
     "coverage-gutters.showLineCoverage": true,
-    "coverage-gutters.showRulerCoverage": true
+    "coverage-gutters.showRulerCoverage": true,
+    "C_Cpp.errorSquiggles": "Disabled"
 }
