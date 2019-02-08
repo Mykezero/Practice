@@ -5,17 +5,33 @@ extern "C"
 	#include "Bowling.h"
 }
 
-TEST_GROUP(Bowling){ };
+void roll_many(size_t rolls, int32_t pins)
+{
+	for(size_t i = 0; i < rolls; i++)
+	{
+		roll(pins);
+	}
+}
+
+void roll_spare()
+{
+	roll(5);
+	roll(5);
+}
+
+TEST_GROUP(Bowling)
+{  
+	void setup()
+	{
+		init_game();
+	}
+};
 
 TEST(Bowling, TestGutterGame)
 {
 	// Fixture setup
-	init_game();
 	// Exercise system
-	for(size_t i = 0; i < 20; i++)
-	{
-		roll(0);
-	}	
+	roll_many(20, 0);
 	// Verify outcome
 	CHECK_EQUAL(0, score())
 	// Teardown
@@ -24,13 +40,21 @@ TEST(Bowling, TestGutterGame)
 TEST(Bowling, TestOnesGame)
 {
 	// Fixture setup
-	init_game();
 	// Exercise system
-	for(size_t i = 0; i < 20; i++)
-	{
-		roll(1);
-	}
+	roll_many(20, 1);
 	// Verify outcome
 	CHECK_EQUAL(20, score());
+	// Teardown
+};
+
+TEST(Bowling, TestSpareGame)
+{
+	// Fixture setup
+	// Exercise system
+	roll_spare();
+	roll(3);
+	roll_many(17, 0);
+	// Verify outcome
+	CHECK_EQUAL(16, score());
 	// Teardown
 };
