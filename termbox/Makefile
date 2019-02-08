@@ -1,37 +1,26 @@
-CPPUTEST_HOME = ../tools/cpputest-3.8
+# * Use g++ -v to debug path errors. 
+# * Common causes for unreferenced errors from ld: 
+#	 https://latedev.wordpress.com/2014/04/22/common-c-error-messages-2-unresolved-reference/
+
 TERMBOX_HOME = ../tools/termbox/usr/local
 
-#Set this to @ to keep the makefile quiet
-SILENCE = @
+bin 		= ./bin
+dirs 		= bin out
+files 		= .o
 
-OTHER_MAKEFILE_TO_INCLUDE = Makefile_Targets.mk
+CXX 		= gcc -Wl,-R$(TERMBOX_HOME)/lib
+CXXFLAGS  	= -I$(TERMBOX_HOME)/include -Isrc/
+LDFLAGS 	= -L$(TERMBOX_HOME)/lib
+LDLIBS		= -ltermbox
 
-#---- Outputs ----#
-COMPONENT_NAME = test
-TARGET_LIB = \
-	lib/lib$(COMPONENT_NAME).a
-	
-TEST_TARGET = \
-	$(COMPONENT_NAME)_tests
-
-#--- Inputs ----#
-PROJECT_HOME_DIR = .
-CPP_PLATFORM = gcc
-
-SRC_DIRS = \
-	src
-
-TEST_SRC_DIRS = \
-	tests \
-	mocks
-	
-INCLUDE_DIRS =\
-  $(CPPUTEST_HOME)/include/ \
-  $(TERMBOX_HOME)/include/ \
-  include \
-  mocks
-  
-CPPUTEST_USE_EXTENSIONS = Y
-CPPUTEST_USE_GCOV = Y
-include ../CppUTestCompileFlags.mk
-include $(CPPUTEST_HOME)/build/MakefileWorker.mk
+all: main
+main:
+	mkdir -p $(dirs)
+	@$(CXX) $(CXXFLAGS) $(LDLIBS) src/*.c $(LDFLAGS) $(LDLIBS) -o $(bin)/$@
+	$(bin)/main
+test: clean
+	@$(CXX) $(CXXFLAGS) src/*.c $(LDFLAGS) $(LDLIBS) -o $(bin)/$@
+	-$(bin)/test
+clean:
+	@$(foreach dir, $(dirs), rm -rf $(dir)/*;)
+	@$(foreach file, $(files), find . -type f -regex '.*\$(file)' -delete;)
