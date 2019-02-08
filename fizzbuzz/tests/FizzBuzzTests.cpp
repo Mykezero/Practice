@@ -38,6 +38,11 @@ TEST(FizzBuzz, With10PrintsBuzz)
 	STRCMP_CONTAINS_TEXT("buzz", Run()[9], "Prints Buzz");
 };
 
+TEST(FizzBuzz, With15PrintsFizzBuzz)
+{
+	STRCMP_CONTAINS_TEXT("fizzbuzz", Run()[14], "Prints Buzz");
+};
+
 TEST(FizzBuzz, WritesFirst20NumbersToConsole)
 {
 	Run();
