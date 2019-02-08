@@ -71,3 +71,13 @@ TEST(Bowling, TestStrikeGame)
 	CHECK_EQUAL(24, score());
 	// Teardown
 };
+
+TEST(Bowling, TestPerfectGame)
+{
+	// Fixture setup
+	// Exercise system
+	roll_many(12, 10);
+	// Verify outcome
+	CHECK_EQUAL(300, score());
+	// Teardown
+};
