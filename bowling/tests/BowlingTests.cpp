@@ -58,3 +58,16 @@ TEST(Bowling, TestSpareGame)
 	CHECK_EQUAL(16, score());
 	// Teardown
 };
+
+TEST(Bowling, TestStrikeGame)
+{
+	// Fixture setup
+	// Exercise system
+	roll(10);
+	roll(3);
+	roll(4);
+	roll_many(16, 0);
+	// Verify outcome
+	CHECK_EQUAL(24, score());
+	// Teardown
+};
